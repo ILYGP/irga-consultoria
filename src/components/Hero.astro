@@ -3,12 +3,12 @@ const WHATSAPP_NUMBER = "34685699580";
 ---
 <section id="top" class="hero">
 	<div class="container">
-		<span class="eyebrow">Consultoría en Inteligencia Artificial</span>
+		<span class="eyebrow">Consultoría en Inteligencia Artificial para negocios locales</span>
 		<h1>Llevamos la IA de forma simple a tu negocio</h1>
 		<p>
-			Ayudamos a pequeños y medianos negocios a automatizar procesos, mejorar su
-			marketing y capacitar a sus equipos con Inteligencia Artificial, sin
-			complicaciones técnicas.
+			Somos IRGA ConsultorIA: ayudamos a pequeños y medianos negocios —como el tuyo— a
+			automatizar tareas repetitivas, mejorar su marketing y atender mejor a sus clientes
+			con Inteligencia Artificial, sin jerga técnica ni grandes inversiones.
 		</p>
 		<div class="hero-actions">
 			<a href="#servicios" class="btn btn-primary">Ver servicios</a>
@@ -21,29 +21,55 @@ const WHATSAPP_NUMBER = "34685699580";
 				Hablar por WhatsApp
 			</a>
 		</div>
+		<ul class="hero-trust">
+			<li>Diagnóstico inicial gratuito</li>
+			<li>Sin permanencia</li>
+			<li>Sin jerga técnica</li>
+		</ul>
 	</div>
 </section>
 
 <style>
-	.hero {
-		padding: 110px 0 70px;
-		text-align: center;
-	}
-	.hero h1 {
-		font-size: clamp(2.1rem, 5vw, 3.2rem);
-		max-width: 780px;
-		margin: 0 auto 20px;
-	}
-	.hero p {
-		max-width: 560px;
-		margin: 0 auto 36px;
-		color: var(--text-muted);
-		font-size: 1.05rem;
-	}
-	.hero-actions {
-		display: flex;
-		gap: 16px;
-		justify-content: center;
-		flex-wrap: wrap;
-	}
+.hero {
+	padding: 110px 0 70px;
+	text-align: center;
+}
+.hero h1 {
+	font-size: clamp(2.1rem, 5vw, 3.2rem);
+	max-width: 780px;
+	margin: 0 auto 20px;
+}
+.hero p {
+	max-width: 560px;
+	margin: 0 auto 36px;
+	color: var(--text-muted);
+	font-size: 1.05rem;
+}
+.hero-actions {
+	display: flex;
+	gap: 16px;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.hero-trust {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px 24px;
+	list-style: none;
+	margin: 28px 0 0;
+	padding: 0;
+	color: var(--text-muted);
+	font-size: 0.85rem;
+	font-weight: 600;
+}
+.hero-trust li {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+.hero-trust li::before {
+	content: "✓";
+	color: var(--accent);
+}
 </style>
