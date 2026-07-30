@@ -4,9 +4,9 @@ interface Props {
 	description?: string;
 }
 
-const { 
-	title = "Irga Consultoría | Soluciones Estratégicas", 
-	description = "Asesoría estratégica, optimización de procesos y soluciones integrales a la medida de tu negocio." 
+const {
+	title = "Irga Consultoría | Soluciones Estratégicas",
+	description = "Asesoría estratégica, optimización de procesos y soluciones integrales a la medida de tu negocio."
 } = Astro.props;
 ---
 
@@ -27,12 +27,18 @@ const {
 <style is:global>
 	:root {
 		--primary: #0f172a;
-		--accent: #2563eb;
+		--accent: #1e40af;
+		--accent-dark: #1e3a8a;
 		--light: #f8fafc;
+		--surface: #ffffff;
+		--border: #e2e8f0;
 		--text: #334155;
+		--text-muted: #64748b;
+		--radius: 14px;
+		--max-width: 1120px;
 		--font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 	}
-	
+
 	* {
 		box-sizing: border-box;
 		margin: 0;
@@ -49,4 +55,59 @@ const {
 	body {
 		line-height: 1.6;
 	}
+
+	img { max-width: 100%; display: block; }
+
+	a { color: inherit; text-decoration: none; }
+
+	.container {
+		max-width: var(--max-width);
+		margin: 0 auto;
+		padding: 0 24px;
+	}
+
+	section { padding: 88px 0; }
+
+	h1, h2, h3 { line-height: 1.2; color: var(--primary); margin-bottom: 16px; }
+
+	h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); }
+
+	.eyebrow {
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		font-size: 0.8rem;
+		font-weight: 700;
+		color: var(--accent);
+		margin-bottom: 12px;
+		display: block;
+	}
+
+	.section-intro {
+		max-width: 620px;
+		color: var(--text-muted);
+		margin-bottom: 48px;
+	}
+
+	.btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+		padding: 14px 28px;
+		border-radius: 999px;
+		font-weight: 600;
+		font-size: 0.95rem;
+		border: 1px solid transparent;
+		cursor: pointer;
+		transition: transform 0.15s ease, background-color 0.15s ease;
+	}
+
+	.btn:hover { transform: translateY(-2px); }
+
+	.btn-primary { background: var(--accent); color: #fff; }
+	.btn-primary:hover { background: var(--accent-dark); }
+
+	.btn-secondary { background: var(--surface); color: var(--primary); border-color: var(--border); }
+
+	.btn-whatsapp { background: #25d366; color: #06210f; }
 </style>
