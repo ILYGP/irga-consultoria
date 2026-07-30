@@ -1,4 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="8" fill="#1e40af"/>
-  <text x="16" y="22" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#f8fafc" text-anchor="middle">I</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 120">
+  <rect x="0" y="0" width="190" height="120" fill="none"/>
+  <polyline points="45,12 8,60 45,108" fill="none" stroke="#0f172a" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="145,12 182,60 145,108" fill="none" stroke="#0f172a" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="95" y="76" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="42" font-weight="800">
+    <tspan fill="#0f172a">I</tspan><tspan fill="#1e40af">A</tspan>
+  </text>
 </svg>
