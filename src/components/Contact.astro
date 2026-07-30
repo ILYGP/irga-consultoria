@@ -1,0 +1,153 @@
+---
+const CONTACT_EMAIL = "irga.amz@gmail.com";
+const WHATSAPP_NUMBER = "34685699580";
+---
+<section id="contacto">
+	<div class="container">
+		<span class="eyebrow">Contacto</span>
+		<h2>Hablemos de tu negocio</h2>
+		<p class="section-intro">
+			Cuéntanos qué necesitas y te respondemos con una propuesta simple, sin
+			compromisos.
+		</p>
+
+		<div class="contact-wrap">
+			<form id="contact-form" class="contact-form">
+				<div class="field">
+					<label for="nombre">Nombre</label>
+					<input type="text" id="nombre" name="nombre" required />
+				</div>
+				<div class="field">
+					<label for="email">Correo electrónico</label>
+					<input type="email" id="email" name="email" required />
+				</div>
+				<div class="field">
+					<label for="negocio">Nombre de tu negocio</label>
+					<input type="text" id="negocio" name="negocio" />
+				</div>
+				<div class="field">
+					<label for="mensaje">Mensaje</label>
+					<textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+				</div>
+				<button type="submit" class="btn btn-primary">Enviar mensaje</button>
+				<p class="form-note">
+					Al enviar se abrirá tu programa de correo con el mensaje ya redactado.
+				</p>
+			</form>
+
+			<div class="contact-side">
+				<h3>También puedes escribirnos directo</h3>
+				<div class="contact-methods">
+					<a
+						class="contact-method"
+						href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hola, quiero información sobre sus servicios de IA")}`}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<span class="icon">💬</span>
+						<span>
+							<span class="label">WhatsApp</span><br />
+							<span class="value">Escríbenos ahora</span>
+						</span>
+					</a>
+					<a class="contact-method" href={`mailto:${CONTACT_EMAIL}`}>
+						<span class="icon">✉️</span>
+						<span>
+							<span class="label">Correo</span><br />
+							<span class="value">{CONTACT_EMAIL}</span>
+						</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script define:vars={{ CONTACT_EMAIL }}>
+	const form = document.getElementById("contact-form");
+	form?.addEventListener("submit", (e) => {
+		e.preventDefault();
+		const data = new FormData(form);
+		const nombre = data.get("nombre");
+		const email = data.get("email");
+		const negocio = data.get("negocio");
+		const mensaje = data.get("mensaje");
+
+		const subject = `Contacto desde la web - ${nombre}`;
+		const body =
+			`Nombre: ${nombre}\n` +
+			`Correo: ${email}\n` +
+			`Negocio: ${negocio || "-"}\n\n` +
+			`Mensaje:\n${mensaje}`;
+
+		window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+			subject
+		)}&body=${encodeURIComponent(body)}`;
+	});
+</script>
+
+<style>
+	.contact-wrap {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 40px;
+	}
+	@media (min-width: 900px) {
+		.contact-wrap { grid-template-columns: 1fr 1fr; }
+	}
+	.contact-form {
+		background: var(--surface);
+		border: 1px solid var(--border);
+		border-radius: var(--radius);
+		padding: 32px;
+		display: grid;
+		gap: 18px;
+	}
+	.field { display: grid; gap: 6px; }
+	.field label { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
+	.field input,
+	.field textarea {
+		background: var(--light);
+		border: 1px solid var(--border);
+		border-radius: 10px;
+		padding: 12px 14px;
+		color: var(--text);
+		font-family: inherit;
+		font-size: 0.95rem;
+	}
+	.field input:focus,
+	.field textarea:focus {
+		outline: none;
+		border-color: var(--accent);
+	}
+	.form-note { font-size: 0.8rem; color: var(--text-muted); }
+	.contact-side {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 24px;
+	}
+	.contact-methods { display: grid; gap: 16px; }
+	.contact-method {
+		display: flex;
+		align-items: center;
+		gap: 14px;
+		padding: 16px;
+		background: var(--surface);
+		border: 1px solid var(--border);
+		border-radius: var(--radius);
+		transition: border-color 0.15s ease;
+	}
+	.contact-method:hover { border-color: var(--accent); }
+	.contact-method .icon {
+		width: 38px;
+		height: 38px;
+		border-radius: 10px;
+		background: var(--light);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.contact-method .label { font-size: 0.8rem; color: var(--text-muted); }
+	.contact-method .value { font-weight: 600; color: var(--primary); }
+</style>
