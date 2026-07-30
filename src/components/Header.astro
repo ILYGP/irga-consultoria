@@ -2,7 +2,16 @@
 ---
 <header class="site-header">
 	<div class="container nav">
-		<a href="#top" class="logo">IRGA <span>ConsultorIA</span></a>
+		<a href="#top" class="logo">
+			<svg class="logo-icon" viewBox="0 0 190 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+				<polyline points="45,15 12,60 45,105" fill="none" stroke="#0f172a" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+				<polyline points="145,15 178,60 145,105" fill="none" stroke="#0f172a" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+				<text x="95" y="75" text-anchor="middle" font-family="system-ui, sans-serif" font-size="40" font-weight="800"><tspan fill="#0f172a">I</tspan><tspan fill="#1e40af">A</tspan></text>
+			</svg>
+			<span class="logo-text">
+				<span class="t-navy">IRGA </span><span class="t-navy" style="font-weight:500;">Consultor</span><span class="t-accent">IA</span>
+			</span>
+		</a>
 		<nav>
 			<ul class="nav-links">
 				<li><a href="#servicios">Servicios</a></li>
@@ -30,11 +39,16 @@
 		padding: 18px 24px;
 	}
 	.logo {
+		display: flex;
+		align-items: center;
+		gap: 10px;
 		font-weight: 800;
 		font-size: 1.2rem;
 		color: var(--primary);
 	}
-	.logo span { color: var(--accent); }
+	.logo-icon { width: 30px; height: auto; flex-shrink: 0; }
+	.t-navy { color: var(--primary); }
+	.t-accent { color: var(--accent); }
 	.nav-links {
 		display: none;
 		gap: 32px;
