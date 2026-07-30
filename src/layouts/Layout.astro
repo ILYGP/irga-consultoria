@@ -5,9 +5,11 @@ interface Props {
 }
 
 const {
-	title = "Irga Consultoría | Soluciones Estratégicas",
-	description = "Asesoría estratégica, optimización de procesos y soluciones integrales a la medida de tu negocio."
+	title = "IRGA ConsultorIA | Consultoría de Inteligencia Artificial para pequeños negocios",
+	description = "Ayudamos a pequeños y medianos negocios a automatizar tareas, mejorar su marketing y atender clientes con Inteligencia Artificial, sin complicaciones técnicas. Diagnóstico inicial gratuito."
 } = Astro.props;
+
+const SITE_URL = "https://irga-consultoria1.pages.dev";
 ---
 
 <!DOCTYPE html>
@@ -17,6 +19,15 @@ const {
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="description" content={description} />
+		<meta name="keywords" content="consultoría de inteligencia artificial, automatización para pequeños negocios, chatbots WhatsApp negocio local, IA para hostelería y restauración" />
+		<link rel="canonical" href={SITE_URL} />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={SITE_URL} />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
 		<title>{title}</title>
 	</head>
 	<body>
