@@ -1,0 +1,70 @@
+---
+const reasons = [
+	{
+		icon: "🔎",
+		title: "Diagnóstico gratuito",
+		description: "Antes de proponerte nada, analizamos tu negocio sin coste ni compromiso, para saber si la IA realmente te va a ayudar.",
+	},
+	{
+		icon: "💬",
+		title: "Sin jerga técnica",
+		description: "Te explicamos todo en palabras claras. Si no lo entiendes, no seguimos: preferimos que decidas con información real.",
+	},
+	{
+		icon: "🎯",
+		title: "Soluciones a medida",
+		description: "No vendemos paquetes cerrados. Cada propuesta parte de cómo trabajas tú, no de una plantilla genérica.",
+	},
+	{
+		icon: "🤝",
+		title: "Acompañamiento continuo",
+		description: "No desaparecemos tras la entrega. Seguimos disponibles para ajustar, resolver dudas y mejorar lo implementado.",
+	},
+];
+---
+<section id="por-que-elegir">
+	<div class="container">
+		<span class="eyebrow">Por qué trabajar con nosotros</span>
+		<h2>¿Por qué elegir IRGA ConsultorIA?</h2>
+		<p class="section-intro">
+			Somos un equipo pequeño, y eso es una ventaja: puedes hablar directamente con
+			quien va a implementar tu proyecto, sin intermediarios.
+		</p>
+		<div class="why-grid">
+			{reasons.map((reason) => (
+				<div class="why-card">
+					<div class="why-icon">{reason.icon}</div>
+					<h3>{reason.title}</h3>
+					<p>{reason.description}</p>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.why-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		gap: 24px;
+	}
+	.why-card {
+		background: var(--surface);
+		border: 1px solid var(--border);
+		border-radius: var(--radius);
+		padding: 28px 24px;
+	}
+	.why-icon {
+		width: 44px;
+		height: 44px;
+		border-radius: 12px;
+		background: #eff6ff;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 1.3rem;
+		margin-bottom: 18px;
+	}
+	.why-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
+	.why-card p { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
+</style>
