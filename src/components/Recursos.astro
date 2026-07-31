@@ -1,0 +1,54 @@
+---
+const packs = [
+	{
+		icon: "🍽️",
+		title: "Hostelería",
+		description: "50 prompts para bares y restaurantes: descripciones de platos, reseñas, redes sociales y más.",
+	},
+	{
+		icon: "🏠",
+		title: "Inmobiliarias",
+		description: "50 prompts para agentes y agencias: anuncios de propiedades, atención a clientes, captación.",
+	},
+	{
+		icon: "🏪",
+		title: "Pequeños negocios",
+		description: "50 prompts para tiendas, peluquerías, gimnasios y autónomos: atención, marketing y gestión.",
+	},
+];
+---
+<section id="recursos">
+	<div class="container">
+		<span class="eyebrow">Recursos</span>
+		<h2>Packs de prompts de IA listos para usar</h2>
+		<p class="section-intro">
+			Prompts probados y organizados por sector, listos para copiar y pegar en ChatGPT o Claude.
+			Cada pack incluye una muestra gratuita para que compruebes la calidad antes de comprar.
+		</p>
+		<div class="packs-grid">
+			{packs.map((pack) => (
+				<div class="pack-card">
+					<div class="pack-icon">{pack.icon}</div>
+					<h3>{pack.title}</h3>
+					<p>{pack.description}</p>
+				</div>
+			))}
+		</div>
+		<div class="packs-cta">
+			<a href="https://payhip.com/irgaconsultoriaia" target="_blank" rel="noopener" class="btn-primary">
+				Ver todos los packs
+			</a>
+		</div>
+	</div>
+</section>
+<style>
+	.packs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 8px; }
+	.pack-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 24px; }
+	.pack-icon { width: 44px; height: 44px; border-radius: 12px; background: #eff6ff; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 18px; }
+	.pack-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
+	.pack-card p { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
+	.packs-cta { text-align: center; margin-top: 36px; }
+	.btn-primary { display: inline-block; background: var(--accent, #1e40af); color: #fff; padding: 14px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; }
+	.btn-primary:hover { opacity: 0.92; }
+</style>
+
