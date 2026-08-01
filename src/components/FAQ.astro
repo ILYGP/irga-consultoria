@@ -1,0 +1,81 @@
+---
+const faqs = [
+  {
+    question: "¿Qué es una consultoría de inteligencia artificial para pequeños negocios?",
+    answer: "Es un servicio que ayuda a pymes, autónomos y negocios locales a identificar qué tareas del día a día pueden automatizarse con Inteligencia Artificial (atención al cliente, marketing, gestión) y a implementarlas paso a paso, sin necesidad de conocimientos técnicos previos.",
+  },
+  {
+    question: "¿Cuánto cuesta implementar IA en mi negocio?",
+    answer: "Depende del alcance del proyecto. Empezamos siempre con un diagnóstico inicial gratuito para entender tu negocio y proponerte solo lo que realmente te va a ahorrar tiempo o generar ingresos, con presupuestos adaptados a pequeños negocios.",
+  },
+  {
+    question: "¿Necesito conocimientos técnicos para usar IA en mi empresa?",
+    answer: "No. Trabajamos precisamente para negocios sin equipo técnico: te explicamos todo en lenguaje claro y nos encargamos de la implementación, la configuración y la formación de tu equipo.",
+  },
+  {
+    question: "¿Qué tipo de negocios pueden beneficiarse de la automatización con IA?",
+    answer: "Hostelería, peluquerías y salones de belleza, tiendas de mascotas y veterinarios, inmobiliarias, comercios locales y cualquier pequeño o mediano negocio que atienda clientes, gestione citas o publique contenido en redes sociales.",
+  },
+  {
+    question: "¿Cómo empiezo a trabajar con IRGA ConsultorIA?",
+    answer: "Escríbenos por WhatsApp o correo y agenda un diagnóstico inicial gratuito y sin compromiso. Analizamos tu negocio y te proponemos un plan de automatización con IA a medida.",
+  },
+];
+---
+
+<section id="faq">
+  <div class="container">
+    <span class="eyebrow">Preguntas frecuentes</span>
+    <h2>Dudas sobre IA para tu negocio</h2>
+    <p class="section-intro">
+      Respuestas claras a las preguntas más habituales sobre consultoría e implementación de Inteligencia Artificial en pequeños negocios.
+    </p>
+    <div class="faq-list">
+      {faqs.map((faq) => (
+        <details class="faq-item">
+          <summary>{faq.question}</summary>
+          <p>{faq.answer}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+  .faq-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    font-weight: 600;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item summary::after {
+    content: "+";
+    float: right;
+    font-weight: 400;
+    color: var(--text-muted);
+  }
+  .faq-item[open] summary::after {
+    content: "−";
+  }
+  .faq-item p {
+    color: var(--text-muted);
+    margin: 12px 0 0;
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+</style>
