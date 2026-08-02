@@ -16,6 +16,37 @@ const packs = [
 		description: "50 prompts para tiendas, peluquerías, gimnasios y autónomos: atención, marketing y gestión.",
 	},
 ];
+
+const planners = [
+	{
+		icon: "🧭",
+		title: "Automatización con IA",
+		description: "Diagnóstico, priorización, herramientas, implementación y medición, paso a paso.",
+		price: "7 €",
+		url: "https://payhip.com/b/X40sW",
+	},
+	{
+		icon: "📈",
+		title: "Marketing con IA",
+		description: "Diagnóstico, estrategia, generación de contenido con IA y calendario editorial.",
+		price: "7 €",
+		url: "https://payhip.com/b/hKIGL",
+	},
+	{
+		icon: "💬",
+		title: "Atención al Cliente con IA",
+		description: "Diseña flujos de atención automática y mixta sin perder el trato humano.",
+		price: "7 €",
+		url: "https://payhip.com/b/4C3zn",
+	},
+	{
+		icon: "📦",
+		title: "Suministros y Stock",
+		description: "PDF imprimible para controlar stock, pedidos y proveedores sin depender de la memoria.",
+		price: "6 €",
+		url: "https://payhip.com/b/vubg1",
+	},
+];
 ---
 <section id="recursos">
 	<div class="container">
@@ -39,6 +70,23 @@ const packs = [
 				Ver todos los packs
 			</a>
 		</div>
+
+		<div class="planners-header">
+			<h3 class="planners-title">Planificadores con IA, listos para usar</h3>
+			<p class="section-intro">
+				Guías paso a paso en Notion (más un organizador imprimible) para poner la IA a trabajar en tu negocio esta misma semana.
+			</p>
+		</div>
+		<div class="packs-grid">
+			{planners.map((planner) => (
+				<a class="pack-card planner-card" href={planner.url} target="_blank" rel="noopener">
+					<div class="pack-icon">{planner.icon}</div>
+					<span class="planner-price">{planner.price}</span>
+					<h3>{planner.title}</h3>
+					<p>{planner.description}</p>
+				</a>
+			))}
+		</div>
 	</div>
 </section>
 <style>
@@ -50,5 +98,10 @@ const packs = [
 	.packs-cta { text-align: center; margin-top: 36px; }
 	.btn-primary { display: inline-block; background: var(--accent, #1e40af); color: #fff; padding: 14px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; }
 	.btn-primary:hover { opacity: 0.92; }
-</style>
 
+	.planners-header { margin-top: 64px; }
+	.planners-title { font-size: 1.4rem; margin-bottom: 8px; }
+	.planner-card { position: relative; display: block; text-decoration: none; color: inherit; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+	.planner-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08); }
+	.planner-price { position: absolute; top: 24px; right: 24px; background: var(--accent, #1e40af); color: #fff; font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 999px; }
+</style>
